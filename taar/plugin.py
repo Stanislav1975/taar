@@ -10,6 +10,7 @@ import json
 from taar.context import default_context
 from taar.profile_fetcher import ProfileFetcher
 from taar import recommenders
+from ordered_set import OrderedSet
 
 # These are configurations that are specific to the TAAR library
 TAAR_MAX_RESULTS = config("TAAR_MAX_RESULTS", default=10, cast=int)
@@ -106,7 +107,19 @@ def configure_plugin(app):  # noqa: C901
         # Strip out weights from TAAR results to maintain compatibility
         # with TAAR 1.0
         jdata = {"results": [x[0] for x in recommendations]}
-        jdata["results"] = (promoted_guids + jdata["results"])[:TAAR_MAX_RESULTS]
+
+        ordered_set = OrderedSet()
+
+        # Only add recommendations if they weren't already added by
+        # promotion
+        for guid in promoted_guids:
+            if guid not in ordered_set:
+                ordered_set.add(guid)
+        for guid in jdata['results']:
+            if guid not in ordered_set:
+                ordered_set.add(guid)
+
+        jdata["results"] = list(ordered_set)[:TAAR_MAX_RESULTS]
 
         response = app.response_class(
             response=json.dumps(jdata), status=200, mimetype="application/json"
