@@ -63,7 +63,7 @@ poyo==0.4.1
 PrettyTable==0.7.2
 prompt_toolkit==1.0.15
 ptyprocess==0.6.0
-py==1.5.3
+py==1.10.0
 pyaml==17.12.1
 pyasn1==0.4.3
 pycparser==2.18
