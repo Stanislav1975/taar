@@ -1,4 +1,4 @@
-FROM python:3.6.8-stretch
+FROM python:3.6-stretch
 ENV PYTHONDONTWRITEBYTECODE 1
 
 MAINTAINER Victor Ng <vng@mozilla.com>
