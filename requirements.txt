@@ -37,7 +37,7 @@ invoke==1.1.0
 iso8601==0.1.12
 itsdangerous==0.24
 jedi==0.12.1
-Jinja2==2.10.1
+Jinja2==2.11.3
 jinja2-time==0.2.0
 jmespath==0.9.3
 jsondiff==1.1.1
