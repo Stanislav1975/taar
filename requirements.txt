@@ -76,7 +76,7 @@ pytest-cov==2.5.1
 python-dateutil==2.6.1
 pytz==2018.5
 PyYAML==4.2b1
-requests==2.20.1
+requests==2.31.0
 requests-toolbelt==0.8.0
 responses==0.9.0
 rsa==3.4.2
