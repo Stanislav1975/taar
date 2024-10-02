@@ -41,7 +41,7 @@ Jinja2==2.10.1
 jinja2-time==0.2.0
 jmespath==0.9.3
 jsondiff==1.1.1
-jsonpickle==0.9.6
+jsonpickle==3.3.0
 MarkupSafe==1.0
 mccabe==0.6.1
 mock==2.0.0
